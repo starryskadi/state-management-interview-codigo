@@ -101,6 +101,7 @@ const TeamDialog = ({ isOpen, setIsOpen, isEdit, team }) => {
                   <input
                     id="playerCount"
                     name="playerCount"
+                    disabled
                     value={state.playerCount}
                     type="number"
                     autoComplete="playerCount"

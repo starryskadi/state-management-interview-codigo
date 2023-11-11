@@ -25,7 +25,7 @@ const TeamCard = ({ team }) => {
             <div className="font-bold text-2xl mb-8">{team.name}</div>
             <div className="text-gray-700 text-base mb-4 mt-2 font-bold flex items-center">
               <FaUsers className="inline-block mr-2" />
-              <span className="mr-3">{team.playerCount} Players </span>
+              <span className="mr-3">{team.players.length} Players </span>
               <Button onClick={() => setIsPlayersOpen(true)}> Edit </Button>
             </div>
 
