@@ -1,0 +1,5 @@
+export const CREATE_TEAM = "CREATE_TEAM";
+export const UPDATE_TEAM = "UPDATE_TEAM";
+export const REMOVE_TEAM = "REMOVE_TEAM";
+export const ADD_PLAYER_TO_TEAM = "ADD_PLAYER_TO_TEAM";
+export const REMOVE_PLAYER_FROM_TEAM = "REMOVE_PLAYER_FROM_TEAM";
