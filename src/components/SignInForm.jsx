@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useDispatch } from "react-redux";
-import { setCurrentUser } from "@src/store/users/users.action";
+import { loginUser } from "@src/store/users/users.action";
 import { useRouter } from "next/navigation";
 import Button from "./Button";
 
@@ -12,7 +12,7 @@ const SignInForm = () => {
 
   const onSignInHandler = (ev) => {
     ev.preventDefault();
-    dispatch(setCurrentUser({ username: ev.target.username.value }));
+    dispatch(loginUser({ username: ev.target.username.value }));
     router.push("/");
   };
 

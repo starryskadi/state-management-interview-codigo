@@ -1,13 +1,13 @@
 import { compose, createStore, applyMiddleware } from "redux";
-import createSagaMiddleware from "redux-saga"; // import redux-saga
+import createSagaMiddleware from "redux-saga";
 import logger from "redux-logger";
 import rootReducers from "./rootReducers";
-import rootSaga from "./rootSagas"; // import your root saga
+import rootSaga from "./rootSagas";
 import { loadState } from "@src/utils/browserStorage.utils";
 
-const sagaMiddleware = createSagaMiddleware(); // create a saga middleware
+const sagaMiddleware = createSagaMiddleware();
 
-const middlewares = [sagaMiddleware, logger]; // replace thunk with sagaMiddleware
+const middlewares = [sagaMiddleware, logger];
 
 const composedEnchancements = compose(applyMiddleware(...middlewares));
 
@@ -19,4 +19,4 @@ export const store = createStore(
   composedEnchancements
 );
 
-sagaMiddleware.run(rootSaga); // run your root saga
+sagaMiddleware.run(rootSaga);
