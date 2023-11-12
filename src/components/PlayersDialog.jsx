@@ -2,12 +2,9 @@ import { useRef } from "react";
 import { Dialog } from "@headlessui/react";
 import Button from "./Button";
 import { useDispatch, useSelector } from "react-redux";
-import { createTeam, updateTeam } from "@src/store/teams/teams.actions";
 import { fetchPlayers } from "@src/store/players/players.actions";
 import { useEffect, useState } from "react";
 import PlayerRow from "./PlayerRow";
-
-const initalState = { name: "", playerCount: 0, region: "", country: "" };
 
 const PlayersDialog = ({ isOpen, setIsOpen, team }) => {
   const dispatch = useDispatch();
@@ -30,22 +27,6 @@ const PlayersDialog = ({ isOpen, setIsOpen, team }) => {
         dispatch(fetchPlayers(currentPage + 1));
       }
     });
-
-    // // FIX: Sometimes the loading stuck, need to investigate
-    // const intersectionObserver = new IntersectionObserver((entries) => {
-    //   if (entries[0].isIntersecting) {
-    //     dispatch(fetchPlayers(currentPage + 1));
-    //   }
-    // });
-
-    // observer.current &&
-    //   intersectionObserver.observe(observer.current, {
-    //     root: scrollContainer.current,
-    //     rootMargin: "0px",
-    //     threshold: 0,
-    //   });
-
-    // return () => intersectionObserver.disconnect();
   }, [scrollContainer.current]);
 
   useEffect(() => {

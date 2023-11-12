@@ -6,10 +6,8 @@ import debounce from "debounce";
 import { saveState } from "@src/utils/browserStorage.utils";
 
 const Provider = ({ children }) => {
-  // here we subscribe to the store changes
+  // Save redux state to local storage for persistence
   store.subscribe(
-    // we use debounce to save the state once each 800ms
-    // for better performances in case multiple changes occur in a short time
     debounce(() => {
       saveState(store.getState());
     }, 800)
